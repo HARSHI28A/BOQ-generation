@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        input[type=radio]+.details {
+            display: none;
+        }
+        
+        input[type=radio]:checked+.fordebit {
+            display: block;
+        }
+        
+        input[type=radio]:checked+.forcredit {
+            display: block;
+        }
+        
+        input[type=radio] {
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <form method="post" action="#">
+
+        <h4>Payment type:</h4>
+
+        <div>
+            <label>Credit card</label>
+            <input type="radio" name="payment_type" id="credit" required>
+
+            <div class="forcredit details">
+                <label>Card no:</label>
+                <input type="text" name="cardno" required=""><span style="color: red;">*</span>
+                <br>
+                <label>CVV no:</label>
+                <input type="text" name="cvvno" required=""><span style="color: red;">*</span>
+                <br>
+                <label>Expiration MM/YYYY</label>
+                <input type="month" name="expire" required=""><span style="color: red;">*</span>
+                <br>
+            </div>
+        </div>
+
+        <div>
+            <label>Debit card</label>
+            <input type="radio" name="payment_type" id="debit">
+
+            <div class="fordebit details">
+                <label>Card no:</label>
+                <input type="text" name="cardno" required=""><span style="color: red;">*</span>
+                <br>
+                <label>CVV no:</label>
+                <input type="text" name="cvvno" required=""><span style="color: red;">*</span>
+                <br>
+                <label>Expiration MM/YYYY</label>
+                <input type="month" name="expire" required=""><span style="color: red;">*</span>
+                <br>
+            </div>
+        </div>
+
+
+
+
+        <div>
+            <input type="submit" value="Pay">
+        </div>
+</body>
+
+</html>

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+
+    <title>Item Rate</title>
+
+    <!-- Icons font CSS-->
+    <link href="{{ url_for('static', filename='vendor/mdi-font/css/material-design-iconic-font.min.css') }}" rel="stylesheet" media="all">
+    <link href="{{ url_for('static', filename='vendor/font-awesome-4.7/css/font-awesome.min.css') }}" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <!-- Vendor CSS-->
+
+    <!-- Main CSS-->
+    <link href="{{ url_for('static', filename='css/main2.css') }}" rel="stylesheet" media="all">
+
+    <script>
+        $(document).ready(function() {
+            $("#btn1").click(function() {
+                $("#add_fields").clone().appendTo("#add_fields2");
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="page-wrapper bg-img-1 p-t-80 ">
+        <div class="wrapper wrapper--w690">
+            <div class="card card-1">
+
+                <div class="card-body">
+
+                    <h1 class="htitle">BoQ Generation Form</h1>
+
+
+                    <form class="wizard-container" method="POST" action="#" id="js-wizard-form">
+                        <div class="progress" id="js-progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
+                                <span class="progress-val">20%</span>
+                            </div>
+                        </div>
+                        <ul class="nav nav-tab">
+                            <li class="active">
+                                <a href="#tab1" data-toggle="tab">1</a>
+                            </li>
+
+
+                        </ul>
+                        <h3 class="htitle2">CHOOSE COLUMN HEADINGS</h3>
+                        <h4 class="htitle2"><u>Basic Fields</u></h4>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="tab1">
+                                <div class="input-group">
+                                    <label class="container"><input type="checkbox" checked="checked" value="item_description" name="mc">
+                                        <span class="checkmark"></span></label>
+                                    <input class="input--style-1" type="text" value="Item Description" required>
+                                </div>
+                                <div class="input-group">
+                                    <label class="container"><input type="checkbox" checked="checked"  value="item_code" name="mc">
+                                        <span class="checkmark"></span></label>
+                                    <input class="input--style-1" type="text" value="Item Code/Make" required>
+                                </div>
+                                <div class="input-group ">
+                                    <label class="container"><input type="checkbox" checked="checked" value="quantity" name="mc">
+                                        <span class="checkmark"></span></label>
+                                    <input class="input--style-1" type="text" value="Quantity" required>
+                                </div>
+                                <div class="input-group">
+                                    <label class="container"><input type="checkbox" checked="checked" value="units" name="mc">
+                                        <span class="checkmark"></span></label>
+                                    <input class="input--style-1" type="text" value="Units" required>
+                                </div>
+                                <div class="input-group">
+                                    <label class="container"><input type="checkbox" checked="checked" value="estimated_rate" name="mc">
+                                        <span class="checkmark"></span></label>
+                                    <input class="input--style-1" type="text" value="Estimated Rate In Rs" required>
+                                </div>
+                                <div class="input-group">
+                                    <label class="container"><input type="checkbox" checked="checked" value="addition" name="mc">
+                                        <span class="checkmark"></span></label>
+                                    <input class="input--style-1" type="text" value="Addition/Deduction" required>
+                                </div>
+                                <div class="input-group">
+                                    <label class="container"><input type="checkbox" checked="checked" value="addition_values" name="mc">
+                                        <span class="checkmark"></span></label>
+                                    <input class="input--style-1" type="text" value="Addition/Deduction Values" required>
+                                </div>
+                                <h4 class="htitle2"><u>Currency Related Fields</u></h4>
+                                <div class="input-group">
+                                    <div class="input-group">
+                                        <label class="special_info2">Choose these fields if your tender can contain bidders from out of India too.</label>
+                                    </div>
+                                </div>
+                                <div class="input-group">
+                                    <label class="container"><input type="checkbox" checked="checked" value="currency_conversation" name="mc" >
+                                        <span class="checkmark"></span></label>
+                                    <input class="input--style-1" type="text" value="Currency Conversion against each Item" required>
+                                </div>
+                                <div class="input-group">
+                                    <label class="container"><input type="checkbox" checked="checked" value="quoted_currency" name="mc">
+                                        <span class="checkmark"></span></label>
+                                    <input class="input--style-1" type="text" value="Quoted Currency in INR / Other Currency" required>
+                                </div>
+                                <h4 class="htitle2"><u>Rate and Tax Related Fields</u></h4>
+                                <div class="input-group">
+                                    <label class="container"><input type="checkbox" checked="checked" name="mc" value="basic_rate">
+                                        <span class="checkmark"></span></label>
+                                    <input class="input--style-1" type="text" value="Basic Rate" required>
+                                </div>
+                                <fieldset id="radio4">
+                                    <div class="input-group">
+                                        <label style="opacity: 0;">foursthbf</label>
+                                        <label class="container1">
+                                            <input type="radio" name="radio4" >
+                                            <span class="checkmark1"></span>
+                                    </label>
+                                        <input class="input--style-1" type="text" name="basic_rate1" value="Basic Rate inclusive of taxes" required>
+                                    </div>
+
+                                    <div class="input-group">
+                                        <label style="opacity: 0;">foursthbf</label>
+                                        <label class="container1">
+                                            <input type="radio" name="radio4">
+                                            <span class="checkmark1"></span>
+                                    </label>
+                                        <input class="input--style-1" type="text" name="basic_rate2" value="Basic Rate without taxes" required>
+                                    </div>
+                                </fieldset>
+                                <div class="input-group">
+                                    <label class="container"><input type="checkbox" checked="checked" value="gst_amount" name="mc">
+                                        <span class="checkmark"></span></label>
+                                    <input class="input--style-1" type="text" value="GST Amount" required>
+                                </div>
+                                <fieldset id="radio3">
+                                    <div class="input-group">
+                                        <label style="opacity: 0;">foursthbf</label>
+                                        <label class="container1">
+                                            <input type="radio" name="radio3" >
+                                            <span class="checkmark1"></span>
+                                    </label>
+                                        <input class="input--style-1" type="text" name="CGST_SGST" value="CGST + SGST/UGST" required>
+                                    </div>
+
+                                    <div class="input-group">
+                                        <label style="opacity: 0;">foursthbf</label>
+                                        <label class="container1">
+                                            <input type="radio" name="radio3">
+                                            <span class="checkmark1"></span>
+                                    </label>
+                                        <input class="input--style-1" type="text" value="IGST" required>
+                                    </div>
+                                    <div class="input-group">
+                                        <label style="opacity: 0;">foursthbf</label>
+                                        <label class="container1">
+                                            <input type="radio" name="radio3">
+                                            <span class="checkmark1"></span>
+                                    </label>
+                                        <input class="input--style-1" type="text" value="GSt only" required>
+                                    </div>
+                                </fieldset>
+                                <div class="input-group">
+                                    <label class="container"><input type="checkbox" checked="checked" value="freight_charges" name="mc">
+                                        <span class="checkmark"></span></label>
+                                    <input class="input--style-1" type="text" value="Freight Charges ( Unloading & Stacking)" required>
+                                </div>
+                                <div class="input-group">
+                                    <label class="container"><input type="checkbox" checked="checked">
+                                        <span class="checkmark"></span></label>
+                                    <input class="input--style-1" type="text" name="any_other_taxes" value="Any Other Taxes" required>
+                                </div>
+                                <div class="input-group">
+                                    <label class="container"><input type="checkbox" checked="checked">
+                                        <span class="checkmark"></span></label>
+                                    <input class="input--style-1" type="text" name="any_other_duties" value="Any Other Duties/Levies" required>
+                                </div>
+                                <div class="input-group">
+                                    <label class="container"><input type="checkbox" checked="checked" value="total_without" name="mc">
+                                        <span class="checkmark"></span></label>
+                                    <input class="input--style-1" type="text" name="amount_without_tax" value="Total Amount Without Taxes" required>
+                                </div>
+
+                                <div class="input-group">
+                                    <label class="container"><input type="checkbox" checked="checked" value="total_with" name="mc">
+                                        <span class="checkmark"></span></label>
+                                    <input class="input--style-1" type="text" name="amount_with_tax" value="Total Amount With Taxes" required>
+                                </div>
+
+                                <!--
+
+
+                                <h4 class="htitle2"><u>Add More Fields</u></h4>
+                                <div id="add_fields">
+                                    <h4 class="htitle2">New Field</h4>
+                                    <div class="input-group">
+                                        <label style="min-width: 100px;">Field Name</label>
+                                        <input class="input--style-1" type="text" name="field_name" required>
+                                    </div>
+                                    <div class="input-group">
+                                        <label style="min-width: 100px;">Field Type</label>
+                                        <input class="input--style-1" type="text" name="field_type" required>
+                                    </div>
+                                    <fieldset id="radio2">
+                                        <div class="input-group">
+                                            <label style="opacity: 0;">foursthbfnefjefn</label>
+                                            <label class="container1">
+                                            <input type="radio" name="radio2">
+                                            <span class="checkmark1"></span>
+                                    </label>
+                                            <input class="input--style-1" type="text" name="text2" value="Text" required>
+                                        </div>
+                                        <div class="input-group">
+                                            <label style="opacity: 0;">foursthbfnefjefn</label>
+                                            <label class="container1">
+                                            <input type="radio" name="radio2">
+                                            <span class="checkmark1"></span>
+                                    </label>
+                                            <input class="input--style-1" type="text" name="text2" value="Number" required>
+                                        </div>
+                                        <div class="input-group">
+                                            <label style="opacity: 0;">foursthbfnefjefn</label>
+                                            <label class="container1">
+                                            <input type="radio" name="radio2">
+                                            <span class="checkmark1"></span>
+                                    </label>
+                                            <input class="input--style-1" type="text" name="text2" value="Alphanumeric" required>
+                                        </div>
+                                    </fieldset>
+                                    <div class="input-group">
+                                        <label style="min-width: 100px;">To Be Filled By</label>
+                                        <input class="input--style-1" type="text" name="field_name" required>
+                                    </div>
+                                    <fieldset id="group1">
+                                        <div class="input-group">
+                                            <label style="opacity: 0;">foursthbfnefjefn</label>
+                                            <label class="container1">
+                                            <input type="radio" name="group1">
+                                            <span class="checkmark1"></span>
+                                    </label>
+                                            <input class="input--style-1" type="text" name="seller" value="Seller" required>
+                                        </div>
+                                        <div class="input-group">
+                                            <label style="opacity: 0;">foursthbfnefjefn</label>
+                                            <label class="container1">
+                                            <input type="radio" name="group1">
+                                            <span class="checkmark1"></span>
+                                    </label>
+                                            <input class="input--style-1" type="text" name="group1" value="Bidder" required>
+                                        </div>
+                                    </fieldset>
+                                    <div class="input-group">
+                                        <label style="min-width: 100px; max-width: 100px;">Enter Formula
+                                        of the field</label>
+                                        <input class="input--style-1" type="text" name="field_name" required>
+                                    </div>
+                                </div>
+                                <div id="add_fields2">
+                                </div>
+
+
+
+                            
+                                <div class="input-group">
+                                    <button type="button" id="btn1"> <img src="{{ url_for('static', filename='plus.svg') }}" style="width: 30px;
+                                height: 30px; "></button><label style="font-size: 20px; color: red;"> Add more Fields</label>
+                                </div>
+                            -->
+                                <div class="">
+                                    <a class="btn-back " href="# ">back</a>
+                                    <button class="btn-next" type="submit" id="submit" href="pass.html">submit</button>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Jquery JS-->
+    <script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js ') }}"></script>
+    <!-- Vendor JS-->
+    <script src="{{ url_for('static', filename='vendor/jquery-validate/jquery.validate.min.js ') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/bootstrap-wizard/bootstrap.min.js ') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/bootstrap-wizard/jquery.bootstrap.wizard.min.js ') }}"></script>
+
+    <!-- Main JS-->
+    <script src="{{ url_for('static', filename='js/global.js ') }}"></script>
+    <script>
+        $(document).ready(function() {
+            $("#btn1").click(function() {
+                $("#add_fields").clone().appendTo("#add_fields2");
+            });
+        });
+    </script>
+</body>
+
+</html>
